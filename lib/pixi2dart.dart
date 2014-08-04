@@ -3,11 +3,11 @@ library pixi2dart;
 import 'dart:html';
 import 'dart:js';
 
-part 'classes/renderer/Renderer.dart';
-part 'classes/renderer/AutoDetectRenderer.dart';
-part 'classes/Stage.dart';
-part 'classes/Sprite.dart';
-part 'classes/Texture.dart';
+part 'src/renderer/Renderer.dart';
+part 'src/renderer/AutoDetectRenderer.dart';
+part 'src/Stage.dart';
+part 'src/Sprite.dart';
+part 'src/Texture.dart';
 
 class PIXI
 {
