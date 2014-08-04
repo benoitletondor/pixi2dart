@@ -6,10 +6,7 @@ abstract class Renderer
     
 // --------------------------------------->
     
-    Renderer(String type, num width, num height)
-    {
-        _js = new JsObject(context['PIXI'][type], [width, height]);
-    }
+    Renderer(String type, num width, num height) :  _js = new JsObject(context['PIXI'][type], [width, height]);
     
 // --------------------------------------->
     

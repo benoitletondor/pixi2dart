@@ -6,11 +6,8 @@ class Sprite
     
 // --------------------------------------->
     
-    Sprite(Texture texture)
-    {
-        _js = new JsObject(context['PIXI']['Sprite'], [texture._js]);
-    }
-    
+    Sprite(Texture texture) :  _js = new JsObject(context['PIXI']['Sprite'], [texture._js]);
+
 // --------------------------------------->
     
     set anchorX(num x) => _js["anchor"]["x"] = x;

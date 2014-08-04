@@ -6,10 +6,7 @@ class Stage
     
 // --------------------------------------->
     
-    Stage(num color)
-    {
-        _js = new JsObject(context['PIXI']['Stage'], [color]);
-    }
+    Stage(num color) : _js = new JsObject(context['PIXI']['Stage'], [color]);
     
     void addChild(Sprite sprite)
     {
