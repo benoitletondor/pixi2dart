@@ -1,17 +1,13 @@
 part of pixi2dart;
 
-class Texture
-{
-    JsObject _js;
+class Texture extends JsObjectWrapper
+{   
+    Texture(JsObject js) : super(js);
     
 // --------------------------------------->
     
     static Texture fromImage(String path)
     {
-        Texture texture = new Texture();
-        
-        texture._js =  new JsObject(context['PIXI']['Texture']['fromImage'], [path]);
-        
-        return texture;
+        return new Texture(new JsObject(context['PIXI']['Texture']['fromImage'], [path]));
     }
 }

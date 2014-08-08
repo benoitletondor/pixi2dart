@@ -1,12 +1,8 @@
 part of pixi2dart;
 
-class Sprite
-{
-    JsObject _js;
-    
-// --------------------------------------->
-    
-    Sprite(Texture texture) :  _js = new JsObject(context['PIXI']['Sprite'], [texture._js]);
+class Sprite extends JsObjectWrapper
+{    
+    Sprite(Texture texture) :  super(new JsObject(context['PIXI']['Sprite'], [texture._js]));
 
 // --------------------------------------->
     

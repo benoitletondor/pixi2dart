@@ -8,6 +8,7 @@ part 'src/renderer/AutoDetectRenderer.dart';
 part 'src/Stage.dart';
 part 'src/Sprite.dart';
 part 'src/Texture.dart';
+part 'js/JsObjectWrapper.dart';
 
 class PIXI
 {
