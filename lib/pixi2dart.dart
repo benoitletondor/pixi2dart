@@ -6,8 +6,10 @@ import 'dart:js';
 part 'src/renderer/Renderer.dart';
 part 'src/renderer/AutoDetectRenderer.dart';
 part 'src/Stage.dart';
-part 'src/Sprite.dart';
+part 'src/display/Sprite.dart';
 part 'src/Texture.dart';
+part 'src/display/Graphics.dart';
+part 'src/display/DisplayObject.dart';
 part 'js/JsObjectWrapper.dart';
 
 class PIXI

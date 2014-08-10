@@ -6,13 +6,13 @@ class Stage extends JsObjectWrapper
     
 // ---------------------------------------->
     
-    void addChild(Sprite sprite)
+    void addChild(DisplayObject displayObject)
     {
-        _js.callMethod("addChild", [sprite._js]);
+        _js.callMethod("addChild", [displayObject._js]);
     }
     
-    void removeChild(Sprite sprite)
+    void removeChild(DisplayObject displayObject)
     {
-        _js.callMethod("removeChild", [sprite._js]);
+        _js.callMethod("removeChild", [displayObject._js]);
     }
 }
