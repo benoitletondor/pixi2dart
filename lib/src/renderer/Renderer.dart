@@ -8,8 +8,8 @@ abstract class Renderer extends JsObjectWrapper
     
     CanvasElement get view => _js["view"];
     
-    void render(Stage stage)
+    void render(Container container)
     {
-        _js.callMethod("render", [stage._js]);
+        _js.callMethod("render", [container._js]);
     }
 }

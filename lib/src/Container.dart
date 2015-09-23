@@ -1,8 +1,8 @@
 part of pixi2dart;
 
-class Stage extends JsObjectWrapper
+class Container extends JsObjectWrapper
 {
-    Stage(num color) : super(new JsObject(context['PIXI']['Stage'], [color]));
+    Container() : super(new JsObject(context['PIXI']['Container']));
     
 // ---------------------------------------->
     
