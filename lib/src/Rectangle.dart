@@ -6,6 +6,8 @@ class Rectangle extends JsObjectWrapper
     Rectangle(JsObject object) : super(object);
     Rectangle.create(num x, num y, num width, num height) : super(new JsObject(PIXI._PIXI["Rectangle"], [x, y, width, height]));
     
+// ------------------------------------>  
+    
     // http://pixijs.github.io/docs/PIXI.Rectangle.html#.EMPTY
     static Rectangle get EMPTY => new Rectangle(PIXI._PIXI["Rectangle"]["EMPTY"]);
     

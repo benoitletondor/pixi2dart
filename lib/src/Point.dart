@@ -6,6 +6,8 @@ class Point extends JsObjectWrapper
     Point(JsObject object) : super(object);
     Point.fromValue(num x, num y) : super(new JsObject(PIXI._PIXI["Point"], [x, y]));
     
+// ------------------------------------>    
+    
     // http://pixijs.github.io/docs/PIXI.Point.html#x
     set x(num value) => _js["x"] = value;
     num get x => _js["x"];

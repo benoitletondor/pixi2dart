@@ -9,9 +9,9 @@ part 'src/Container.dart';
 part 'src/Point.dart';
 part 'src/Matrix.dart';
 part 'src/Rectangle.dart';
-part 'src/display/Sprite.dart';
+part 'src/Sprite.dart';
 part 'src/Texture.dart';
-part 'src/display/Graphics.dart';
+part 'src/Graphics.dart';
 part 'src/DisplayObject.dart';
 part 'src/loaders/Loader.dart';
 part 'src/loaders/Resource.dart';
@@ -39,64 +39,4 @@ class PIXI
     static num get DEG_TO_RAD => _PIXI['DEG_TO_RAD'];
     
     static Loader get loader => new Loader.fromInstance(_PIXI['loader']);
-}
-
-// http://pixijs.github.io/docs/PIXI.html#.SHAPES
-enum PIXI_SHAPES
-{
-    POLY,
-    RECT,
-    CIRC,
-    ELIP,
-    RREC
-}
-
-// http://pixijs.github.io/docs/PIXI.html#.SCALE_MODES
-enum PIXI_SCALE_MODES
-{
-    DEFAULT,
-    LINEAR,
-    NEAREST
-}
-
-// http://pixijs.github.io/docs/PIXI.html#.RENDERER_TYPE
-enum PIXI_RENDERER_TYPE
-{
-    UNKNOWN,
-    WEBGL,
-    CANVAS
-}
-
-// http://pixijs.github.io/docs/PIXI.html#.DRAW_MODES
-enum PIXI_DRAW_MODES
-{
-    POINTS,
-    LINES,
-    LINE_LOOP,
-    LINE_STRIP,
-    TRIANGLES,
-    TRIANGLE_STRIP,
-    TRIANGLE_FAN
-}
-
-// http://pixijs.github.io/docs/PIXI.html#.BLEND_MODES
-enum PIXI_BLEND_MODES
-{
-    NORMAL,
-    ADD,
-    MULTIPLY,
-    SCREEN,
-    OVERLAY,
-    DARKEN,
-    LIGHTEN,
-    COLOR_DODGE,
-    COLOR_BURN,
-    HARD_LIGHT,
-    SOFT_LIGHT,
-    DIFFERENCE,
-    EXCLUSION,
-    HUE,
-    SATURATION,
-    COLOR,
-    LUMINOSITY
 }
