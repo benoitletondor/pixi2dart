@@ -4,10 +4,5 @@ class Texture extends JsObjectWrapper
 {   
     Texture(JsObject js) : super(js);
     
-// --------------------------------------->
-    
-    static Texture fromImage(String path)
-    {
-        return new Texture(new JsObject(context['PIXI']['Texture']['fromImage'], [path]));
-    }
+    Texture.fromImage(String path) : super(new JsObject(PIXI._PIXI['Texture']['fromImage'], [path]));
 }

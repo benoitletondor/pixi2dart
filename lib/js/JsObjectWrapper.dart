@@ -4,5 +4,8 @@ class JsObjectWrapper
 {
     JsObject _js;
     
-    JsObjectWrapper(JsObject this._js);
+    JsObjectWrapper(JsObject this._js)
+    {
+        assert(this._js != null);
+    }
 }
