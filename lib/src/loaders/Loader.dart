@@ -2,11 +2,11 @@ part of pixi2dart;
 
 typedef void OnLoadComplete(Loader loader, List<Resource> resources);
 
-// http://pixijs.github.io/docs/PIXI.loaders.Loader.html
+/// http://pixijs.github.io/docs/PIXI.loaders.Loader.html
 class Loader extends JsObjectWrapper
 {
-    Loader({String baseUrl, int concurrency}) : super(new JsObject(PIXI._PIXI['loaders']['Loader'], [baseUrl ?? "", concurrency ?? 10]));
-    Loader.fromInstance(JsObject instance) : super(instance);
+    Loader(JsObject instance) : super(instance);
+    Loader.create({String baseUrl, int concurrency}) : super(new JsObject(PIXI._PIXI['loaders']['Loader'], [baseUrl ?? "", concurrency ?? 10]));
     
 // -------------------------------------->    
     
