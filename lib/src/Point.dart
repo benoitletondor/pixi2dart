@@ -1,6 +1,12 @@
 part of pixi2dart;
 
-/// http://pixijs.github.io/docs/PIXI.Point.html
+/**
+ * The Point object represents a location in a two-dimensional coordinate system, 
+ * where x represents the horizontal axis and y represents the vertical axis.
+ * http://pixijs.github.io/docs/PIXI.Point.html
+ * 
+ * NB: This class extends the Point of the Dart HTML package
+ */
 class Point extends html.Point implements JsObjectWrapper {
   JsObject _js;
 
@@ -25,5 +31,22 @@ class Point extends html.Point implements JsObjectWrapper {
   set y(num value) {
     super.y(value);
     _js["y"] = value;
+  }
+
+// ------------------------------------>
+
+  /// http://pixijs.github.io/docs/PIXI.Point.html#clone
+  Point clone() => new Point(_js.callMethod("clone"));
+
+  /// http://pixijs.github.io/docs/PIXI.Point.html#copy
+  void copy(Point source) {
+    x = source.x;
+    y = source.y;
+  }
+
+  /// http://pixijs.github.io/docs/PIXI.Point.html#set
+  void set(num x, num y) {
+    this.x = x;
+    this.y = y;
   }
 }
