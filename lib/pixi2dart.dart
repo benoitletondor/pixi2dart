@@ -18,28 +18,27 @@ part 'src/loaders/Resource.dart';
 part 'src/extras/BitmapText.dart';
 part 'js/JsObjectWrapper.dart';
 
-class PIXI
-{
-    static JsObject _PIXI = context['PIXI'];
-  
-    /// http://pixijs.github.io/docs/PIXI.html#.VERSION
-    static String get VERSION => _PIXI['VERSION']; 
-    
-    /// http://pixijs.github.io/docs/PIXI.html#.TARGET_FPMS
-    static num get TARGET_FPMS => _PIXI['TARGET_FPMS'];
-    
-    /// http://pixijs.github.io/docs/PIXI.html#.RETINA_PREFIX
-    static String get RETINA_PREFIX => _PIXI['RETINA_PREFIX'];
-     
-    /// http://pixijs.github.io/docs/PIXI.html#.RAD_TO_DEG
-    static num get RAD_TO_DEG => _PIXI['RAD_TO_DEG'];
-    
-    /// http://pixijs.github.io/docs/PIXI.html#.PI_2
-    static num get PI_2 => _PIXI['PI_2'];
-    
-    /// http://pixijs.github.io/docs/PIXI.html#.DEG_TO_RAD
-    static num get DEG_TO_RAD => _PIXI['DEG_TO_RAD'];
-    
-    /// http://pixijs.github.io/docs/PIXI.html#.loader
-    static Loader get loader => new Loader(_PIXI['loader']);
+class PIXI {
+  static JsObject _PIXI = context['PIXI'];
+
+  /// http://pixijs.github.io/docs/PIXI.html#.VERSION
+  static String get VERSION => _PIXI['VERSION'];
+
+  /// http://pixijs.github.io/docs/PIXI.html#.TARGET_FPMS
+  static num get TARGET_FPMS => _PIXI['TARGET_FPMS'];
+
+  /// http://pixijs.github.io/docs/PIXI.html#.RETINA_PREFIX
+  static String get RETINA_PREFIX => _PIXI['RETINA_PREFIX'];
+
+  /// http://pixijs.github.io/docs/PIXI.html#.RAD_TO_DEG
+  static num get RAD_TO_DEG => _PIXI['RAD_TO_DEG'];
+
+  /// http://pixijs.github.io/docs/PIXI.html#.PI_2
+  static num get PI_2 => _PIXI['PI_2'];
+
+  /// http://pixijs.github.io/docs/PIXI.html#.DEG_TO_RAD
+  static num get DEG_TO_RAD => _PIXI['DEG_TO_RAD'];
+
+  /// http://pixijs.github.io/docs/PIXI.html#.loader
+  static Loader get loader => new Loader(_PIXI['loader']);
 }
