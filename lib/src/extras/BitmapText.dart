@@ -3,8 +3,8 @@ part of pixi2dart;
 /// http://pixijs.github.io/docs/PIXI.extras.BitmapText.html
 class BitmapText extends Container {
   BitmapText(String text, BitmapTextStyle style)
-      : super(new JsObject(
-            PIXI._PIXI['extras']['BitmapText'], [text, style.jsify()]));
+      : super(
+            new JsObject(_PIXI['extras']['BitmapText'], [text, style.jsify()]));
 
 // ------------------------------------>
 

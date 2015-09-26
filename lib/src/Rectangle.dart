@@ -4,13 +4,13 @@ part of pixi2dart;
 class Rectangle extends JsObjectWrapper {
   Rectangle(JsObject object) : super(object);
 
-  Rectangle.create(num x, num y, num width, num height)
-      : super(new JsObject(PIXI._PIXI["Rectangle"], [x, y, width, height]));
+  Rectangle.fromValues(num x, num y, num width, num height)
+      : super(new JsObject(_PIXI["Rectangle"], [x, y, width, height]));
 
 // ------------------------------------>
 
   /// http://pixijs.github.io/docs/PIXI.Rectangle.html#.EMPTY
-  static Rectangle get EMPTY => new Rectangle(PIXI._PIXI["Rectangle"]["EMPTY"]);
+  static Rectangle get EMPTY => new Rectangle(_PIXI["Rectangle"]["EMPTY"]);
 
   /// http://pixijs.github.io/docs/PIXI.Rectangle.html#x
   set x(num value) => _js["x"] = value;

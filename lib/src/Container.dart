@@ -4,7 +4,7 @@ part of pixi2dart;
 class Container extends DisplayObject {
   Container(JsObject instance) : super(instance);
 
-  Container.empty() : super(new JsObject(PIXI._PIXI['Container']));
+  Container.empty() : super(new JsObject(_PIXI['Container']));
 
 // ---------------------------------------->
 
@@ -15,6 +15,18 @@ class Container extends DisplayObject {
   /// http://pixijs.github.io/docs/PIXI.Container.html#width
   set width(num value) => _js["width"] = value;
   num get width => _js["width"];
+
+  /// http://pixijs.github.io/docs/PIXI.Container.html#children
+  List<DisplayObject> get childrens {
+    JsArray<JsObject> childrensArray = _js.callMethod("childrens");
+
+    List<DisplayObject> childrens = new List<DisplayObject>();
+    for (JsObject children in childrensArray) {
+      childrens.add(new DisplayObject(children));
+    }
+
+    return childrens;
+  }
 
 // ---------------------------------------------->
 

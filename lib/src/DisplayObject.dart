@@ -1,8 +1,9 @@
 part of pixi2dart;
 
 /** 
- * http://pixijs.github.io/docs/PIXI.DisplayObject.html
+ * The base class for all objects that are rendered on the screen.
  * This is an abstract class and should not be used on its own rather it should be extended.
+ * http://pixijs.github.io/docs/PIXI.DisplayObject.html
  */
 class DisplayObject extends JsObjectWrapper {
   DisplayObject(JsObject js) : super(js);
@@ -16,6 +17,19 @@ class DisplayObject extends JsObjectWrapper {
   /// http://pixijs.github.io/docs/PIXI.DisplayObject.html#cacheAsBitmap
   set cacheAsBitmap(bool value) => _js["cacheAsBitmap"] = value;
   bool get cacheAsBitmap => _js["cacheAsBitmap"];
+
+  /// http://pixijs.github.io/docs/PIXI.DisplayObject.html#filterArea
+  set filterArea(Rectangle value) => _js["filterArea"] = value._js;
+  Rectangle get filterArea => new Rectangle(_js["filterArea"]);
+
+  // TODO : http://pixijs.github.io/docs/PIXI.DisplayObject.html#filters
+
+  /// http://pixijs.github.io/docs/PIXI.DisplayObject.html#mask
+  set mask(dynamic value) {
+    assert(value is Graphics || value is Sprite);
+    _js["mask"] = value._js;
+  }
+  // TODO: getter
 
   /// http://pixijs.github.io/docs/PIXI.DisplayObject.html#parent
   Container get parent => new Container(_js["parent"]);
@@ -68,6 +82,12 @@ class DisplayObject extends JsObjectWrapper {
     _js.callMethod("destroy", [destroyChildren ?? false]);
   }
 
+  /// http://pixijs.github.io/docs/PIXI.DisplayObject.html#generateTexture
+  Texture generateTexture(
+          SystemRenderer renderer, SCALE_MODES scaleMode, num resolution) =>
+      new Texture(_js.callMethod("generateTexture",
+          [renderer._js, _scaleModesValue(scaleMode), resolution]));
+
   /// http://pixijs.github.io/docs/PIXI.DisplayObject.html#getBounds
   Rectangle getBounds() => new Rectangle(_js.callMethod("getBounds"));
 
@@ -80,5 +100,10 @@ class DisplayObject extends JsObjectWrapper {
   }
 
   /// http://pixijs.github.io/docs/PIXI.DisplayObject.html#toGlobal
-  Point toGlobal(Point position) => _js.callMethod("toGlobal", [position._js]);
+  Point toGlobal(Point position) =>
+      new Point(_js.callMethod("toGlobal", [position._js]));
+
+  /// http://pixijs.github.io/docs/PIXI.DisplayObject.html#toLocal
+  Point toLocal(Point position, {DisplayObject from}) => new Point(_js
+      .callMethod("toLocal", [position._js, from == null ? null : from._js]));
 }

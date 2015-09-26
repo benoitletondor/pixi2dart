@@ -6,8 +6,8 @@ typedef void OnLoadComplete(Loader loader, List<Resource> resources);
 class Loader extends JsObjectWrapper {
   Loader(JsObject instance) : super(instance);
   Loader.create({String baseUrl, int concurrency})
-      : super(new JsObject(PIXI._PIXI['loaders']['Loader'],
-            [baseUrl ?? "", concurrency ?? 10]));
+      : super(new JsObject(
+            _PIXI['loaders']['Loader'], [baseUrl ?? "", concurrency ?? 10]));
 
 // -------------------------------------->
 

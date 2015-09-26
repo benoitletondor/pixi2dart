@@ -1,23 +1,36 @@
 part of pixi2dart;
 
-/// http://pixijs.github.io/docs/PIXI.Texture.html
+/**
+ * A texture stores the information that represents an image or part of an image. 
+ * It cannot be added to the display list directly. 
+ * Instead use it as the texture for a Sprite. If no frame is provided then the whole image is used.
+ * http://pixijs.github.io/docs/PIXI.Texture.html
+ */
 class Texture extends JsObjectWrapper {
   Texture(JsObject js) : super(js);
 
   /// http://pixijs.github.io/docs/PIXI.Texture.html#.fromImage
   Texture.fromImage(String path)
-      : super(new JsObject(PIXI._PIXI['Texture']['fromImage'], [path]));
+      : super(new JsObject(_PIXI['Texture']['fromImage'], [path]));
 
   /// http://pixijs.github.io/docs/PIXI.Texture.html#.fromFrame
   Texture.fromFrame(String frameId)
-      : super(new JsObject(PIXI._PIXI['Texture']["fromFrame"], [frameId]));
+      : super(new JsObject(_PIXI['Texture']["fromFrame"], [frameId]));
+
+  // TODO: http://pixijs.github.io/docs/PIXI.Texture.html#.fromCanvas
+
+  // TODO: http://pixijs.github.io/docs/PIXI.Texture.html#.fromVideo
+
+  // TODO: http://pixijs.github.io/docs/PIXI.Texture.html#.fromVideoUrl
 
 // ------------------------------------>
 
   /// http://pixijs.github.io/docs/PIXI.Texture.html#.EMPTY
-  static Texture get EMPTY => new Texture(PIXI._PIXI["Texture"]["EMPTY"]);
+  static Texture get EMPTY => new Texture(_PIXI["Texture"]["EMPTY"]);
 
 // ------------------------------------>
+
+  // TODO: http://pixijs.github.io/docs/PIXI.Texture.html#baseTexture
 
   /// http://pixijs.github.io/docs/PIXI.Texture.html#crop
   set crop(Rectangle value) => _js["crop"] = value._js;
@@ -55,8 +68,12 @@ class Texture extends JsObjectWrapper {
 
   /// http://pixijs.github.io/docs/PIXI.Texture.html#.addTextureToCache
   static void addTextureToCache(Texture texture, String id) {
-    new JsObject(PIXI._PIXI['Texture']["addTextureToCache"], [texture._js, id]);
+    new JsObject(_PIXI['Texture']["addTextureToCache"], [texture._js, id]);
   }
+
+  /// http://pixijs.github.io/docs/PIXI.Texture.html#.removeTextureFromCache
+  static Texture removeTextureFromCache(String id) => new Texture(
+      new JsObject(_PIXI['Texture']["removeTextureFromCache"], [id]));
 
   /// http://pixijs.github.io/docs/PIXI.Texture.html#clone
   Texture clone() => new Texture(_js.callMethod("clone"));

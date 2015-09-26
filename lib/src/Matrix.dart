@@ -3,16 +3,16 @@ part of pixi2dart;
 /// http://pixijs.github.io/docs/PIXI.Matrix.html
 class Matrix extends JsObjectWrapper {
   Matrix(JsObject object) : super(object);
-  Matrix.create() : super(new JsObject(PIXI._PIXI["Matrix"]));
+
+  Matrix.create() : super(new JsObject(_PIXI["Matrix"]));
 
 // ------------------------------------>
 
   /// http://pixijs.github.io/docs/PIXI.Matrix.html#.IDENTITY
-  static Matrix get IDENTITY => new Matrix(PIXI._PIXI["Matrix"]["IDENTITY"]);
+  static Matrix get IDENTITY => new Matrix(_PIXI["Matrix"]["IDENTITY"]);
 
   /// http://pixijs.github.io/docs/PIXI.Matrix.html#.TEMP_MATRIX
-  static Matrix get TEMP_MATRIX =>
-      new Matrix(PIXI._PIXI["Matrix"]["TEMP_MATRIX"]);
+  static Matrix get TEMP_MATRIX => new Matrix(_PIXI["Matrix"]["TEMP_MATRIX"]);
 
 // ------------------------------------>
 

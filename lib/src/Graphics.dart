@@ -2,7 +2,7 @@ part of pixi2dart;
 
 /// http://pixijs.github.io/docs/PIXI.Graphics.html
 class Graphics extends Container {
-  Graphics() : super(new JsObject(PIXI._PIXI["Graphics"]));
+  Graphics() : super(new JsObject(_PIXI["Graphics"]));
 
 // ---------------------------------------->
 
