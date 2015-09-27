@@ -9,10 +9,11 @@ class Sprite extends Container {
 
   /// http://pixijs.github.io/docs/PIXI.Sprite.html#.fromImage
   Sprite.fromImage(String imageId)
-      : super(new JsObject(_PIXI['Texture']['fromImage'], [imageId]));
+      : super(new JsObject(_PIXI['Sprite']['fromImage'], [imageId]));
 
+  /// http://pixijs.github.io/docs/PIXI.Sprite.html#.fromFrame
   Sprite.fromFrame(String frameId, {bool crossorigin, SCALE_MODES scaleMode})
-      : super(new JsObject(_PIXI['Texture']['fromFrame'], [
+      : super(new JsObject(_PIXI['Sprite']['fromFrame'], [
           frameId,
           crossorigin ?? true,
           scaleMode == null
