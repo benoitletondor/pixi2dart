@@ -7,7 +7,7 @@ part of pixi2dart;
  * 
  * NB: This class extends the Point of the Dart HTML package
  */
-class Point extends html.Point implements JsObjectWrapper {
+class Point extends math.Point implements JsObjectWrapper {
   JsObject _js;
 
   Point(JsObject _js) : super(_js["x"], _js["y"]) {

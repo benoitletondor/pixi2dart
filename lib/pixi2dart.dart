@@ -1,9 +1,12 @@
 library pixi2dart;
 
 import 'dart:html' as html;
+import 'dart:math' as math;
 import 'dart:js';
 
 part 'src/SystemRenderer.dart';
+part 'src/WebGLRenderer.dart';
+part 'src/CanvasRenderer.dart';
 part 'src/Container.dart';
 part 'src/Point.dart';
 part 'src/Matrix.dart';
