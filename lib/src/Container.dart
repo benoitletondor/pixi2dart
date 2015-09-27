@@ -1,6 +1,10 @@
 part of pixi2dart;
 
-/// http://pixijs.github.io/docs/PIXI.Container.html
+/**
+ * A Container represents a collection of display objects. 
+ * It is the base class of all display objects that act as a container for other objects.
+ * http://pixijs.github.io/docs/PIXI.Container.html
+ */
 class Container extends DisplayObject {
   Container(JsObject instance) : super(instance);
 
@@ -61,6 +65,16 @@ class Container extends DisplayObject {
   /// http://pixijs.github.io/docs/PIXI.Container.html#removeChildren
   void removeChildren(int beginIndex, int endIndex) {
     _js.callMethod("removeChildren", [beginIndex, endIndex]);
+  }
+
+  /// http://pixijs.github.io/docs/PIXI.Container.html#renderCanvas
+  void renderCanvas(CanvasRenderer renderer) {
+    _js.callMethod("renderCanvas", [renderer._js]);
+  }
+
+  /// http://pixijs.github.io/docs/PIXI.Container.html#renderWebGL
+  void renderWebGL(WebGLRenderer renderer) {
+    _js.callMethod("renderWebGL", [renderer._js]);
   }
 
   /// http://pixijs.github.io/docs/PIXI.Container.html#setChildIndex

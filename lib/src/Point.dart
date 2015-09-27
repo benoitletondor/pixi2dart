@@ -5,7 +5,7 @@ part of pixi2dart;
  * where x represents the horizontal axis and y represents the vertical axis.
  * http://pixijs.github.io/docs/PIXI.Point.html
  * 
- * NB: This class extends the Point of the Dart HTML package
+ * NB: This class extends the Point of the Dart math package
  */
 class Point extends math.Point implements JsObjectWrapper {
   JsObject _js;

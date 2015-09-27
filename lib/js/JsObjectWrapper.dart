@@ -6,4 +6,12 @@ class JsObjectWrapper {
   JsObjectWrapper(JsObject this._js) {
     assert(this._js != null);
   }
+
+  bool operator ==(other) {
+    if (!(other is JsObjectWrapper)) {
+      return false;
+    }
+
+    return identical(_js, other._js);
+  }
 }

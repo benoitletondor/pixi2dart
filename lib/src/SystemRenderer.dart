@@ -1,9 +1,7 @@
 part of pixi2dart;
 
 /**
- * The CanvasRenderer draws the scene and all its content onto a 2d canvas. 
- * This renderer should be used for browsers that do not support webGL. 
- * Don't forget to add the CanvasRenderer.view to your DOM or you will not see anything :)
+ * Abstract renderer
  * http://pixijs.github.io/docs/PIXI.SystemRenderer.html
  */
 class SystemRenderer extends JsObjectWrapper {
@@ -47,15 +45,7 @@ class SystemRenderer extends JsObjectWrapper {
   bool get transparent => _js["transparent"];
 
   /// http://pixijs.github.io/docs/PIXI.SystemRenderer.html#type
-  RENDERER_TYPE get type {
-    int jsType = _js["type"];
-    for (RENDERER_TYPE type in RENDERER_TYPE.values) {
-      if (type.index == jsType) {
-        return type;
-      }
-    }
-    return RENDERER_TYPE.UNKNOWN;
-  }
+  RENDERER_TYPE get type => RENDERER_TYPE.values[_js["type"]];
 
   /// http://pixijs.github.io/docs/PIXI.SystemRenderer.html#view
   set view(html.CanvasElement value) => _js["view"] = value;
@@ -79,6 +69,22 @@ class SystemRenderer extends JsObjectWrapper {
 
   void render(Container container) {
     _js.callMethod("render", [container._js]);
+  }
+
+// --------------------------------------->
+
+  /// Cast this renderer to a WebGL one.
+  /// You must ensure that type == WEBGL before calling this method
+  WebGLRenderer asWebGL() {
+    assert(type == RENDERER_TYPE.WEBGL);
+    return new WebGLRenderer(_js);
+  }
+
+  /// Cast this renderer to a Canvas one.
+  /// You must ensure that type == CANVAS before calling this method
+  CanvasRenderer asCanvas() {
+    assert(type == RENDERER_TYPE.CANVAS);
+    return new CanvasRenderer(_js);
   }
 }
 
