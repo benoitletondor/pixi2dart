@@ -12,14 +12,10 @@ class Sprite extends Container {
       : super(new JsObject(_PIXI['Sprite']['fromImage'], [imageId]));
 
   /// http://pixijs.github.io/docs/PIXI.Sprite.html#.fromFrame
-  Sprite.fromFrame(String frameId, {bool crossorigin, SCALE_MODES scaleMode})
-      : super(new JsObject(_PIXI['Sprite']['fromFrame'], [
-          frameId,
-          crossorigin ?? true,
-          scaleMode == null
-              ? _scaleModesValue(SCALE_MODES.DEFAULT)
-              : _scaleModesValue(scaleMode)
-        ]));
+  Sprite.fromFrame(String frameId,
+      {bool crossorigin: true, SCALE_MODES scaleMode: SCALE_MODES.DEFAULT})
+      : super(new JsObject(
+            _PIXI['Sprite']['fromFrame'], [frameId, crossorigin, scaleMode]));
 
 // --------------------------------------->
 

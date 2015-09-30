@@ -8,7 +8,7 @@ class SystemRenderer extends JsObjectWrapper {
   SystemRenderer(JsObject object) : super(object);
 
   SystemRenderer.fromValues(String type, num width, num height,
-      {RendererOptions options})
+      {RendererOptions options: null})
       : super(new JsObject(_PIXI[type],
             [width, height, options == null ? null : options.jsify()]));
 

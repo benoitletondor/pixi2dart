@@ -11,7 +11,7 @@ class WebGLRenderer extends SystemRenderer {
   WebGLRenderer(JsObject object) : super(object);
 
   WebGLRenderer.fromValues(num width, num height,
-      {WebGLRendererOptions options})
+      {WebGLRendererOptions options: null})
       : super(new JsObject(_PIXI["WebGLRenderer"],
             [width, height, options == null ? null : options.jsify()]));
 

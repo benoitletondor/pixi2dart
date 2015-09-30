@@ -5,9 +5,8 @@ typedef void OnLoadComplete(Loader loader, List<Resource> resources);
 /// http://pixijs.github.io/docs/PIXI.loaders.Loader.html
 class Loader extends JsObjectWrapper {
   Loader(JsObject instance) : super(instance);
-  Loader.create({String baseUrl, int concurrency})
-      : super(new JsObject(
-            _PIXI['loaders']['Loader'], [baseUrl ?? "", concurrency ?? 10]));
+  Loader.create({String baseUrl: "", int concurrency: 10})
+      : super(new JsObject(_PIXI['loaders']['Loader'], [baseUrl, concurrency]));
 
 // -------------------------------------->
 

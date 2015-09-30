@@ -10,7 +10,7 @@ class CanvasRenderer extends SystemRenderer {
   CanvasRenderer(JsObject object) : super(object);
 
   CanvasRenderer.fromValues(num width, num height,
-      {CanvasRendererOptions options})
+      {CanvasRendererOptions options: null})
       : super(new JsObject(_PIXI["CanvasRenderer"],
             [width, height, options == null ? null : options.jsify()]));
 
