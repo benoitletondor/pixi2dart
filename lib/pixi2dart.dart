@@ -4,22 +4,22 @@ import 'dart:html' as html;
 import 'dart:math' as math;
 import 'dart:js';
 
-part 'src/SystemRenderer.dart';
-part 'src/WebGLRenderer.dart';
-part 'src/CanvasRenderer.dart';
-part 'src/Container.dart';
-part 'src/Point.dart';
-part 'src/Matrix.dart';
-part 'src/Rectangle.dart';
-part 'src/Sprite.dart';
-part 'src/Texture.dart';
-part 'src/Graphics.dart';
-part 'src/Circle.dart';
-part 'src/DisplayObject.dart';
-part 'src/loaders/Loader.dart';
-part 'src/loaders/Resource.dart';
-part 'src/extras/BitmapText.dart';
-part 'js/JsObjectWrapper.dart';
+part 'src/system_renderer.dart';
+part 'src/web_gl_renderer.dart';
+part 'src/canvas_renderer.dart';
+part 'src/container.dart';
+part 'src/point.dart';
+part 'src/matrix.dart';
+part 'src/rectangle.dart';
+part 'src/sprite.dart';
+part 'src/texture.dart';
+part 'src/graphics.dart';
+part 'src/circle.dart';
+part 'src/display_object.dart';
+part 'src/loaders/loader.dart';
+part 'src/loaders/resource.dart';
+part 'src/extras/bitmap_text.dart';
+part 'js/js_object_wrapper.dart';
 
 JsObject _PIXI = context['PIXI'];
 
