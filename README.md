@@ -2,7 +2,7 @@
 
 This is an early work in progress wrapper of the [Pixi.js](http://www.pixijs.com/) library for Dart. It's a simple bridge of Javascript functions and objects to Dart.
 
-Pixi.js version: 3.0.7
+Pixi.js version: 3.0.10
 
 ### Idea
 
