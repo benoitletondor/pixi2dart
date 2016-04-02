@@ -28,4 +28,6 @@ class Resource extends JsObjectWrapper {
 
   String get name => _js['name'];
   String get url => _js['url'];
+
+  Texture get texture => new Texture(_js["texture"]);
 }

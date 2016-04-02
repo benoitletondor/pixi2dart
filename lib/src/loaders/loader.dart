@@ -16,7 +16,7 @@
 
 part of pixi2dart;
 
-typedef void OnLoadComplete(Loader loader, List<Resource> resources);
+typedef void OnLoadComplete(Loader loader, Map<String, Resource> resources);
 
 /// http://pixijs.github.io/docs/PIXI.loaders.Loader.html
 class Loader extends JsObjectWrapper {
@@ -34,12 +34,12 @@ class Loader extends JsObjectWrapper {
   void load(OnLoadComplete callback) {
     _js.callMethod("load", [
       (JsObject loaderObj, JsObject resourcesObj) {
-        List<Resource> resources = new List<Resource>();
+        Map<String, Resource> resources = new Map<String, Resource>();
 
         JsArray<String> keys =
             context['Object'].callMethod('keys', [resourcesObj]);
         for (String resourceName in keys) {
-          resources.add(new Resource(resourcesObj[resourceName]));
+          resources[resourceName] = new Resource(resourcesObj[resourceName]);
         }
 
         callback(this, resources);
