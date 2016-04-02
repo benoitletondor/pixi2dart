@@ -31,6 +31,7 @@ part 'src/sprite.dart';
 part 'src/texture.dart';
 part 'src/graphics.dart';
 part 'src/circle.dart';
+part 'src/text.dart';
 part 'src/display_object.dart';
 part 'src/loaders/loader.dart';
 part 'src/loaders/resource.dart';

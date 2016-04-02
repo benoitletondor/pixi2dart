@@ -33,6 +33,8 @@ class Sprite extends Container {
       : super(new JsObject(
             _PIXI['Sprite']['fromFrame'], [frameId, crossorigin, scaleMode]));
 
+  Sprite._fromJSObject(JsObject object) : super(object);
+
 // --------------------------------------->
 
   /// http://pixijs.github.io/docs/PIXI.Sprite.html#anchor
