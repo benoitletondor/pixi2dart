@@ -42,8 +42,8 @@ class Text extends Sprite {
 class TextStyle {
   String font;
   String align = "left";
-  num tint = 0xFFFFFF;
-  num stroke = 0xFFFFFF;
+  String fill = "#FFFFFF";
+  String stroke = "#FFFFFF";
   num strokeThickness = 0;
   bool wordWrap = false;
   num wordWrapWidth = 100;
@@ -57,12 +57,12 @@ class TextStyle {
   String lineJoin = "miter";
   num miterLimit = 10;
 
-  TextStyle(String this.font, {num this.tint});
+  TextStyle(String this.font, {String this.fill});
 
   JsObject jsify() => new JsObject.jsify({
         "font": font,
         "align": align,
-        "tint": tint,
+        "fill": fill,
         "stroke": stroke,
         "strokeThickness": strokeThickness,
         "wordWrap": wordWrap,
